@@ -1,56 +1,77 @@
-# 虚拟环境
-venv/
-env/
-*.venv
-*.virtualenv
-
-# 环境变量文件
-.env
-.env.*
-
-# Python 缓存文件
+# Python
 __pycache__/
 *.py[cod]
 *$py.class
 
-# C extensions
-*.so
+# Virtual environment
+venv/
+env/
+.env
 
-# 分发/打包
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-
-# 其他常见的忽略项
-.DS_Store
-*.log
-*.swp
-*.swo
-
-# IDE 相关文件
+# IDE settings
 .vscode/
 .idea/
-*.sublime-project
-*.sublime-workspace
 
-# 测试覆盖率
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Project specific
+config.ini
+secrets.json
+
+# Dependency directories
+node_modules/
+jspm_packages/
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+
+# Poetry
+poetry.lock
+
+# Coverage reports
 htmlcov/
 .coverage
 .coverage.*
 .cache
-nosetests.xml
-coverage.xml
-*.cover
+
+# Pytest
+.pytest_cache/
+
+# mypy
+.mypy_cache/
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pytype static type analyzer
+.pytype/
+
+# Cython debug symbols
+cython_debug/
+

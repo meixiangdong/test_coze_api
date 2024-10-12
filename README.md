@@ -4,3 +4,20 @@
 
 ## 项目结构
 
+
+test_coze_api/
+│
+├── config/
+│ └── settings.py
+│
+├── src/
+│ ├── api/
+│ │ └── coze_client.py
+│ │
+│ └── main.py
+│
+├── .env
+├── .gitignore
+├── requirements.txt
+├── setup.sh
+└── README.md
