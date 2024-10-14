@@ -5,15 +5,21 @@ import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from api.coze_client import CozeClient
+from config.settings import COZE_API_KEY, COZE_API_BASE_URL, BOT_ID
 import uuid
 
 # 主程序逻辑
 def main():
+    print("配置信息:")
+    print(f"API Key: {COZE_API_KEY[:5]}...{COZE_API_KEY[-5:]}")
+    print(f"API Base URL: {COZE_API_BASE_URL}")
+    print(f"Bot ID: {BOT_ID}")
+    
     # 初始化 CozeClient
     client = CozeClient()
     user_id = str(uuid.uuid4())  # 生成一个随机的用户ID
     
-    print("欢迎使用 Coze API 聊天程序！")
+    print("\n欢迎使用 Coze API 聊天程序！")
     print("输入 'quit' 或 'exit' 来结束对话。")
     
     while True:
