@@ -7,7 +7,9 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from api.coze_client import CozeClient
 import uuid
 
+# 主程序逻辑
 def main():
+    # 初始化 CozeClient
     client = CozeClient()
     user_id = str(uuid.uuid4())  # 生成一个随机的用户ID
     

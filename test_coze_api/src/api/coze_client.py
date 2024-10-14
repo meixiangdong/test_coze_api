@@ -9,12 +9,13 @@ from config.settings import COZE_API_KEY, COZE_API_BASE_URL, BOT_ID
 
 class CozeClient:
     def __init__(self):
+        self.api_key = COZE_API_KEY
         self.base_url = COZE_API_BASE_URL
+        self.bot_id = BOT_ID
         self.headers = {
-            'Authorization': f'Bearer {COZE_API_KEY}',
+            'Authorization': f'Bearer {self.api_key}',
             'Content-Type': 'application/json'
         }
-        self.bot_id = BOT_ID
 
     def chat(self, user_id, content):
         endpoint = f"{self.base_url}/v3/chat"
@@ -36,3 +37,11 @@ class CozeClient:
 
     # 在这里添加更多与 Coze API 交互的方法
     # 例如：创建对话、发送消息、获取响应等
+
+    def send_message(self, message):
+        # 实现发送消息的逻辑
+        pass
+
+    def get_response(self):
+        # 实现获取响应的逻辑
+        pass
