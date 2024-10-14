@@ -23,12 +23,15 @@ def main():
             break
         
         response = client.chat(user_id, user_input)
+        print(response)
         
+        '''
         if 'data' in response and 'messages' in response['data']:
             bot_response = response['data']['messages'][-1]['content']
             print(f"Bot: {bot_response}")
         else:
             print("Bot: 抱歉，我无法理解你的输入。")
+        '''
 
 if __name__ == "__main__":
     main()
