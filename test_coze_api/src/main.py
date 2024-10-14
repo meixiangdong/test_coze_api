@@ -22,16 +22,17 @@ def main():
             print("谢谢使用，再见！")
             break
         
-        response = client.chat(user_id, user_input)
-        print(response)
-        
-        '''
-        if 'data' in response and 'messages' in response['data']:
-            bot_response = response['data']['messages'][-1]['content']
-            print(f"Bot: {bot_response}")
-        else:
-            print("Bot: 抱歉，我无法理解你的输入。")
-        '''
+        try:
+            response = client.chat(user_id, user_input)
+            if 'code' in response and response['code'] != 0:
+                print(f"错误: {response['msg']} (错误代码: {response['code']})")
+            elif 'data' in response and 'messages' in response['data']:
+                bot_response = response['data']['messages'][-1]['content']
+                print(f"Bot: {bot_response}")
+            else:
+                print("Bot: 抱歉，我无法理解你的输入。")
+        except Exception as e:
+            print(f"发生错误: {str(e)}")
 
 if __name__ == "__main__":
     main()
