@@ -4,9 +4,13 @@ import requests
 import json
 
 # 添加项目根目录到 Python 路径
-sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))))
+sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 
 from config.settings import COZE_API_KEY, COZE_API_BASE_URL, BOT_ID
+
+print(f"Imported COZE_API_KEY: {COZE_API_KEY}")
+print(f"Imported COZE_API_BASE_URL: {COZE_API_BASE_URL}")
+print(f"Imported BOT_ID: {BOT_ID}")
 
 class CozeClient:
     def __init__(self):
