@@ -2,11 +2,13 @@ import sys
 import os
 import requests
 import json
+from dotenv import load_dotenv
 
 # 添加项目根目录到 Python 路径
 # sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))))
 
 # from config.settings import COZE_API_KEY, COZE_API_BASE_URL, BOT_ID
+load_dotenv()
 
 COZE_API_KEY = 'pat_Q4I1aeeay1EA3AZAKVIwfikjJmuZCUSSSB1FDFCV2fIfYS9IYflIPl5nZiHurZ4k'
 COZE_API_BASE_URL = 'https://api.coze.com'  # Replace with the actual base URL if different
@@ -33,6 +35,9 @@ print(f"Imported COZE_API_BASE_URL: {COZE_API_BASE_URL}")
 print(f"Imported BOT_ID: {BOT_ID}")
 
 print("Running updated coze_client.py")
+
+# 加载环境变量
+load_dotenv()
 
 class CozeClient:
     def __init__(self):
