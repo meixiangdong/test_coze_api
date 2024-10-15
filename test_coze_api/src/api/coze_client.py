@@ -4,19 +4,41 @@ import requests
 import json
 
 # 添加项目根目录到 Python 路径
-sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+# sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))))
 
-from config.settings import COZE_API_KEY, COZE_API_BASE_URL, BOT_ID
+# from config.settings import COZE_API_KEY, COZE_API_BASE_URL, BOT_ID
+
+COZE_API_KEY = 'pat_Q4I1aeeay1EA3AZAKVIwfikjJmuZCUSSSB1FDFCV2fIfYS9IYflIPl5nZiHurZ4k'
+COZE_API_BASE_URL = 'https://api.coze.com'  # Replace with the actual base URL if different
+BOT_ID = '7424503009159495714' 
+# ... existing code ...
+
+# 使用环境变量，并提供默认值
+COZE_API_KEY = os.getenv('COZE_API_KEY', 'pat_Q4I1aeeay1EA3AZAKVIwfikjJmuZCUSSSB1FDFCV2fIfYS9IYflIPl5nZiHurZ4k')
+COZE_API_BASE_URL = os.getenv('COZE_API_BASE_URL', 'https://api.coze.com')
+BOT_ID = os.getenv('BOT_ID', '7424503009159495714')
+
+print(f"COZE_API_KEY from env: {os.getenv('COZE_API_KEY', 'Not set')}")
+print(f"COZE_API_BASE_URL from env: {os.getenv('COZE_API_BASE_URL', 'Not set')}")
+print(f"BOT_ID from env: {os.getenv('BOT_ID', 'Not set')}")
+
+print(f"Used COZE_API_KEY: {COZE_API_KEY}")
+print(f"Used COZE_API_BASE_URL: {COZE_API_BASE_URL}")
+print(f"Used BOT_ID: {BOT_ID}")
+
+# ... existing code ...
 
 print(f"Imported COZE_API_KEY: {COZE_API_KEY}")
 print(f"Imported COZE_API_BASE_URL: {COZE_API_BASE_URL}")
 print(f"Imported BOT_ID: {BOT_ID}")
 
+print("Running updated coze_client.py")
+
 class CozeClient:
     def __init__(self):
-        self.api_key = COZE_API_KEY
+        self.api_key = 'pat_Q4I1aeeay1EA3AZAKVIwfikjJmuZCUSSSB1FDFCV2fIfYS9IYflIPl5nZiHurZ4k'
         self.base_url = COZE_API_BASE_URL
-        self.bot_id = BOT_ID
+        self.bot_id = '7424503009159495714'
         self.headers = {
             'Authorization': f'Bearer {self.api_key}',
             'Content-Type': 'application/json'
